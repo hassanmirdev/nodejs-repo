@@ -1,0 +1,43 @@
+name: Node.js Application Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Specify Node.js version (can be 14, 16, etc.)
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Run tests
+      run: |
+        npm test
+
+    - name: Build the application
+      run: |
+        mkdir build
+        # Simulating a build process (in this case just creating an artifact)
+        echo "Build artifacts for the Node.js app" > build/artifact.txt
+        echo "Node.js Application Build" >> build/artifact.txt
+
+    - name: Store build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: node-app-artifact
+        path: build/

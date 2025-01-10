@@ -1,0 +1,13 @@
+name: Workflow context github 
+run-name: github context
+on:
+ push:
+jobs:
+ build-github-context:
+  runs-on: mac-runner
+  steps:
+   - name: Print repository and actor info
+   - run: |
+      echo "Github properties: ${{ github }}
+      echo "Repository: ${{ github.repository }}"
+      echo "Actor: ${{ github.actor }}"

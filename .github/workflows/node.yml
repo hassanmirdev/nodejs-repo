@@ -1,4 +1,4 @@
-name: Node.js Application Workflow
+name: Node.js Application Workflow on mac runner (self hosted)
 
 on:
   push:

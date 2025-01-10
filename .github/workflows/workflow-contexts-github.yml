@@ -1,13 +1,20 @@
-name: Workflow context github 
-run-name: github context
+name: Example Workflow with Context
+
 on:
- push:
+  push:
+    branches:
+      - main
+
 jobs:
- build-github-context:
-  runs-on: mac-runner
-  steps:
-   - name: Print repository and actor info
-   - run: |
-      echo "Github properties: ${{ github }}
-      echo "Repository: ${{ github.repository }}"
-      echo "Actor: ${{ github.actor }}"
+  example-job:
+    runs-on: mac-runner
+
+    steps:
+    
+    - name: Display GitHub context
+      run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Actor: ${{ github.actor }}"
+        echo "SHA: ${{ github.sha }}"
+        echo "Event: ${{ github.event_name }}"
+      

@@ -13,8 +13,7 @@ jobs:
     
     - name: Display various GitHub context
       run: |
-
-        cho "GitHub Properties: ${{ github }}"
+        echo "GitHub Properties: ${{ github }}"
         echo "Repository: ${{ github.repository }}"
         echo "Repo id: ${{ github.repository_id }}"
         echo "Repo owner: ${{ github.repository_owner }}"

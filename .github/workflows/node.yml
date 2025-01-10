@@ -1,12 +1,8 @@
 name: Node.js Application Workflow on mac runner (self hosted)
+run-name: node.js on MAC
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  worklow_dispatch:
 
 jobs:
   build:

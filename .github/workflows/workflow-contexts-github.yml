@@ -29,6 +29,6 @@ jobs:
         echo "Run attempt: ${{ github.run_attempt }}"
         echo "Secret Source: ${{ github.secret_source }}"
         echo "Server Url: ${{ github.server_url }}"
-        echo "Workflow name: ${{ ggithub.workflow }}"
+        echo "Workflow name: ${{ github.workflow }}"
         
       

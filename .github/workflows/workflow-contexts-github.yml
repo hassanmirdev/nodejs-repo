@@ -1,4 +1,4 @@
-name: Example Workflow with Context
+name: Example Workflow with Github Context
 
 on:
   push:
@@ -6,15 +6,31 @@ on:
       - main
 
 jobs:
-  example-job:
+  Github-context-job:
     runs-on: mac-runner
 
     steps:
     
-    - name: Display GitHub context
+    - name: Display various GitHub context
       run: |
+
+        cho "GitHub Properties: ${{ github }}"
         echo "Repository: ${{ github.repository }}"
+        echo "Repo id: ${{ github.repository_id }}"
+        echo "Repo owner: ${{ github.repository_owner }}"
         echo "Actor: ${{ github.actor }}"
+        echo "Actor ID: ${{ github.actor_id }}"
         echo "SHA: ${{ github.sha }}"
-        echo "Event: ${{ github.event_name }}"
+        echo "Event_name: ${{ github.event_name }}"
+        echo "Action: ${{ github.action }}"
+        echo "Action ref: ${{ github.action_ref }}"
+        echo "Env: ${{ github.env }}"
+        echo "Job id: ${{ github.job }}"
+        echo "Run id: ${{ github.run_id }}"
+        echo "Run Number : ${{ github.run_number }}"
+        echo "Run attempt: ${{ github.run_attempt }}"
+        echo "Secret Source: ${{ ggithub.secret_source }}"
+        echo "Server Url: ${{ github.server_url }}"
+        echo "Workflow name: ${{ ggithub.workflow }}"
+        
       

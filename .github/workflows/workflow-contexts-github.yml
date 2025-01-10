@@ -27,7 +27,7 @@ jobs:
         echo "Run id: ${{ github.run_id }}"
         echo "Run Number : ${{ github.run_number }}"
         echo "Run attempt: ${{ github.run_attempt }}"
-        echo "Secret Source: ${{ ggithub.secret_source }}"
+        echo "Secret Source: ${{ github.secret_source }}"
         echo "Server Url: ${{ github.server_url }}"
         echo "Workflow name: ${{ ggithub.workflow }}"
         

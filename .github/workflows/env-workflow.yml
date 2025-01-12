@@ -4,19 +4,22 @@ on:
     branches:
       - main
 env:
-  name: hassan
+  name: Hassan
   env_type: workflow level env
 
 jobs:
   evn-context-job:
     runs-on: ubuntu-latest
+    env:
+     name: ibrahim
+     env_type: job level env
     steps:
     - name: working with env variables
       run: |
         echo "my name is ${{ env.name }}" #hassan
         echo "This is ${{ env.env_type }}" #workflow level env
-        echo "my name is ${{ env.name }}" #John
-        echo "This is ${{ env.env_type }}" #step level env
-        env:
-         name: John
-         env-type: Step level env
+        # echo "my name is ${{ env.name }}" #John
+        # echo "This is ${{ env.env_type }}" #step level env
+      env:
+       name: John
+       env-type: Step level env 

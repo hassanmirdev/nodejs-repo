@@ -1,0 +1,18 @@
+name: Workflow with Env Context
+on:
+  push:
+    branches:
+      - main
+env:
+  name: hassan
+  env_type: workflow level env
+
+jobs:
+  evn-context-job:
+    runs-on: mac-runner
+    steps:
+    
+    - name: working with env variables
+      run: |
+        echo: 'my name is ${{env.name}}'
+        echo: 'This is ${{env.env_type}}'

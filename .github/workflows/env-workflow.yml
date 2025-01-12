@@ -1,4 +1,4 @@
-name: Workflow with Env Context
+name: Workflow with Env Context.
 on:
   push:
     branches:

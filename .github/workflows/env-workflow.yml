@@ -14,5 +14,5 @@ jobs:
     
     - name: working with env variables
       run: |
-        echo: "my name is ${{ env.name }}"
-        echo: "This is ${{ env.env_type }}"
+        echo "my name is ${{ env.name }}"
+        echo "This is ${{ env.env_type }}"

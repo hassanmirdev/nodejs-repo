@@ -22,4 +22,4 @@ jobs:
         # echo "This is ${{ env.env_type }}" #step level env
       env:
        name: John
-       env-type: Step level env 
+       env_type: Step level env 

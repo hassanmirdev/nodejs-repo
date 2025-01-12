@@ -1,9 +1,7 @@
 name: Workflow with Github Context
 
 on:
-  push:
-    branches:
-      - main
+ workflow_dispatch:
 
 jobs:
   Github-context-job:

@@ -11,8 +11,12 @@ jobs:
   evn-context-job:
     runs-on: ubuntu-latest
     steps:
-    
     - name: working with env variables
       run: |
-        echo "my name is ${{ env.name }}"
-        echo "This is ${{ env.env_type }}"
+        echo "my name is ${{ env.name }}" #hassan
+        echo "This is ${{ env.env_type }}" #workflow level env
+        echo "my name is ${{ env.name }}" #John
+        echo "This is ${{ env.env_type }}" #step level env
+        env:
+         name: John
+         env-type: Step level env

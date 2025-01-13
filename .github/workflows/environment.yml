@@ -1,0 +1,19 @@
+name: environment workflow
+run-name: env workflow
+on:
+ workflow_dispatch
+  inputs:
+   Environment:
+     type: environment
+     default: Development
+jobs:
+  env-job:
+  runs-on: ubuntu-latest
+  enviornment: ${{ inputs.Environment }} 
+  steps:
+   - name: fetching the evironemnt
+     run: | 
+     echo "${{ vars.UNAME }}"
+     echo "${{ secrets.ENVDEV }}"
+     
+

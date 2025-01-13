@@ -1,4 +1,5 @@
 name: PostgreSQL Service Example
+run-name: postgres container
 on: push
 jobs:
   postgres-job:
@@ -12,12 +13,15 @@ jobs:
         ports:
           # Maps TCP port 5432 in the service container to a randomly chosen available port on the host.
           - 5432
-
     steps:
-      - run: pg_isready -h localhost -p ${{ job.services.postgres.ports[5432] }}
-      - run: echo "Run tests against Postgres"
-      - run: echo "Job container ${{ job.container }}"
-      - run: echo "Job container ${{ job.container.id }}"
-      - run: echo "Job container ${{ job.container.network }}"
-     
+    - name: Job context properties
+      run: |
+        pg_isready -h localhost -p ${{ job.services.postgres.ports[5432] }} 
+        echo "Run tests against Postgres" 
+        echo "Job container: ${{ job.container }}" 
+        echo "Job container ID: ${{ job.container.id }}" 
+        echo "Job container network: ${{ job.container.network }}" 
+        echo "Service Container ID (Postgres): ${{ job.services.postgres.id }}" 
+        echo "Service Container Network (Postgres): ${{ job.services.postgres.network }}" 
+        echo "Service Container Ports (Postgres): ${{ job.services.postgres.ports }}"
       

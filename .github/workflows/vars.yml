@@ -1,4 +1,5 @@
-name: Example Using Environment Variables and Outputs
+name: Example vars
+run-name: vars demo
 
 on: [push]
 

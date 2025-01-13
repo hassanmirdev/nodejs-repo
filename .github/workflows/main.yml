@@ -1,0 +1,14 @@
+# .github/workflows/main.yml
+
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-test-workflow:
+    uses: ./.github/workflows/test.yml  # Reusing the test workflow
+    with:
+      node_version: '14'  # Pass Node.js version as input

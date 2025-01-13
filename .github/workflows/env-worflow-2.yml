@@ -11,8 +11,9 @@ jobs:
      name: job
      type: jobs level
     steps:
-      - run: echo "Hi ${{ env.name }}"
-      - run: echo 'Env type is ${{ env.type }}'
-        env:
-         name: octocat
-         type: steps level
+     - name: env workflow
+        echo "Hi ${{ env.name }}"
+        echo "Env type is ${{ env.type }}"
+       env:
+        name: octocat
+        type: steps level

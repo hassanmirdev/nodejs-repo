@@ -18,3 +18,15 @@ jobs:
        env:
         name: octocat
         type: steps level
+  linux-job:
+    runs-on: linux-latest
+    env:
+     name: job2
+     type: workflow on job 2- job level
+    steps:
+     - name: job 2 workflow
+     - run: echo "Hi ${{ env.name }}"
+     - run: echo "Type ${{ env.type }}"
+
+
+     

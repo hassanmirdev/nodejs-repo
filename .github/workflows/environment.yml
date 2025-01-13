@@ -9,11 +9,11 @@ on:
 jobs:
   env-job:
    runs-on: ubuntu-latest
-  enviornment: ${{ inputs.Environment }} 
+   environment: ${{ inputs.Environment }} 
    steps:
-   - name: fetching the evironemnt
-     run: | 
-      echo "${{ vars.UNAME }}"
-      echo "${{ secrets.ENVDEV }}"
+    - name: fetching the evironemnt
+      run: | 
+       echo "${{ vars.UNAME }}"
+       echo "${{ secrets.ENVDEV }}"
      
 

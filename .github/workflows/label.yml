@@ -1,0 +1,17 @@
+name: Label Created Activity
+on:
+  label:
+    types:
+      - created  # This event triggers when a label is created or added to an issue or PR.
+jobs:
+  label_created:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Log label creation details
+        run: |
+          echo "on push label"
+       

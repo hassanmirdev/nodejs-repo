@@ -1,32 +1,30 @@
 name: Workflow with Github Context
 
 on:
- workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   Github-context-job:
     runs-on: mac-runner
     steps:
-    
-    - name: Display various GitHub context
-      run: |
-        echo "GitHub Properties: ${{ github }}"
-        echo "Repository: ${{ github.repository }}"
-        echo "Repo id: ${{ github.repository_id }}"
-        echo "Repo owner: ${{ github.repository_owner }}"
-        echo "Actor: ${{ github.actor }}"
-        echo "Actor ID: ${{ github.actor_id }}"
-        echo "SHA: ${{ github.sha }}"
-        echo "Event_name: ${{ github.event_name }}"
-        echo "Action: ${{ github.action }}"
-        echo "Action ref: ${{ github.action_ref }}"
-        echo "Env: ${{ github.env }}"
-        echo "Job id: ${{ github.job }}"
-        echo "Run id: ${{ github.run_id }}"
-        echo "Run Number : ${{ github.run_number }}"
-        echo "Run attempt: ${{ github.run_attempt }}"
-        echo "Secret Source: ${{ github.secret_source }}"
-        echo "Server Url: ${{ github.server_url }}"
-        echo "Workflow name: ${{ github.workflow }}"
-        
-      
+      - name: Display various GitHub context
+        run: |
+          echo "GitHub Properties: ${{ github }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Repo id: ${{ github.repository_id }}"
+          echo "Repo owner: ${{ github.repository_owner }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Actor ID: ${{ github.actor_id }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Event_name: ${{ github.event_name }}"
+          echo "Action: ${{ github.action }}"
+          echo "Action ref: ${{ github.action_ref }}"
+          echo "Env: ${{ github.env }}"
+          echo "Job id: ${{ github.job }}"
+          echo "Run id: ${{ github.run_id }}"
+          echo "Run Number : ${{ github.run_number }}"
+          echo "Run attempt: ${{ github.run_attempt }}"
+          echo "Secret Source: ${{ github.secret_source }}"
+          echo "Server Url: ${{ github.server_url }}"
+          echo "Workflow name: ${{ github.workflow }}"
+        # This step displays various GitHub context properties.

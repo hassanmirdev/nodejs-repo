@@ -1,33 +1,34 @@
 name: env workflow example 2
 run-name: env workflow example 2
+
 on: push
+
 env:
   name: workflow
-  type:  workflow level
+  type: workflow level
+
 jobs:
   windows_job:
     runs-on: windows-latest
     env:
-     name: job
-     type: jobs level
+      name: job
+      type: jobs level
     steps:
-     - name: env workflow
-       run: |
-        echo "Hi ${{ env.name }}"
-        echo "Env type is ${{ env.type }}"
-       env:
-        name: octocat
-        type: steps level
+      - name: env workflow
+        run: |
+          echo "Hi ${{ env.name }}"
+          echo "Env type is ${{ env.type }}"
+        env:
+          name: octocat
+          type: steps level
+
   linux-job:
     runs-on: ubuntu-latest
     env:
-     name: job2
-     type: workflow on job 2- job level
+      name: job2
+      type: workflow on job 2- job level
     steps:
-     - name: env workflow job 2
-       run: |
-        echo "Hi ${{ env.name }}"
-        echo "Type ${{ env.type }}"
-
-
-     
+      - name: env workflow job 2
+        run: |
+          echo "Hi ${{ env.name }}"
+          echo "Type ${{ env.type }}"

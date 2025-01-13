@@ -1,5 +1,6 @@
 on:
   workflow_dispatch:
+
 env:
   # Setting an environment variable with the value of a configuration variable
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
@@ -12,16 +13,16 @@ jobs:
     runs-on: ${{ vars.RUNNER }}
     environment: ${{ vars.ENVIRONMENT_STAGE }}
     steps:
-    - name: Use variables
-      run: |
-        echo "repository variable : $REPOSITORY_VAR"
-        echo "variable from shell environment : $env_var"
-      env:
-        REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
-        OVERRIDE_VAR: ${{ vars.OVERRIDE_VAR }}
+      - name: Use variables
+        run: |
+          echo "repository variable : $REPOSITORY_VAR"
+          echo "variable from shell environment : $env_var"
+        env:
+          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+          OVERRIDE_VAR: ${{ vars.OVERRIDE_VAR }}
         
-    - name: ${{ vars.HELLO_WORLD_STEP }}
-      if: ${{ vars.HELLO_WORLD_ENABLED == 'true' }}
-      uses: actions/hello-world-javascript-action@main
-      with:
-        who-to-greet: ${{ vars.GREET_NAME }}
+      - name: ${{ vars.HELLO_WORLD_STEP }}
+        if: ${{ vars.HELLO_WORLD_ENABLED == 'true' }}
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: ${{ vars.GREET_NAME }}

@@ -9,6 +9,7 @@ on:
 
 jobs:
   call-test-workflow:
-    uses: ./.github/workflows/test.yml  # Reusing the test workflow
+    # This job reuses the test workflow defined in ./.github/workflows/test.yml
+    uses: ./.github/workflows/test.yml
     with:
       node_version: '14'  # Pass Node.js version as input

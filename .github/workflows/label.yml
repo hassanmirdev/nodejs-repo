@@ -1,19 +1,20 @@
 name: Label Created Activity
+
 on:
   label:
     types:
       - created  # This event triggers when a label is created or added to an issue or PR.
+
 jobs:
   label_created:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  # This step checks out the repository to the runner.
 
       - name: Log label creation details
         run: |
           echo "Label '${{ github.event.label.name }}' was added to the ${{ github.event.label.name }} on ${{
             github.event.issue.pull_request ? 'PR #' + github.event.issue.number : 'Issue #' + github.event.issue.number
-          }}" >> label_activity.log
-       
+          }}" >> label_activity.log  # This step logs the details of the label creation.

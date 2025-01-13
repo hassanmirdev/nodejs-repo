@@ -13,6 +13,7 @@ jobs:
 
       - name: Log label creation details
         run: |
-          echo "on push label"
-          echo "Label '${{ github.event.label.name }}' 
+          echo "Label '${{ github.event.label.name }}' was added to the ${{ github.event.label.name }} on ${{
+            github.event.issue.pull_request ? 'PR #' + github.event.issue.number : 'Issue #' + github.event.issue.number
+          }}" >> label_activity.log
        

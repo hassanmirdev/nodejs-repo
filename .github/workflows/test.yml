@@ -1,0 +1,27 @@
+name: Test Node.js App
+
+on:
+  workflow_call:  # Defines this workflow as reusable
+    inputs:
+      node_version:
+        required: true
+        type: string
+        description: "Node.js version to use."
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node_version }}
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run tests
+        run: npm test

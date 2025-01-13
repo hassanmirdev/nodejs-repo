@@ -4,7 +4,7 @@ run-name: vars demo
 on: 
  push:
 # env:
-  #    MY_VAR: "Hello from the env context"
+  # MY_VAR: "Hello from the env context"
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Print a message using env variable
         run: |
           echo "This is from repo ${{ vars.myvar }}"
-          #echo " This is from local worflow ${{ vars.MY_VAR" }}"
+          # echo " This is from local worflow ${{ vars.MY_VAR" }}"
         
 
   

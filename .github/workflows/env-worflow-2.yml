@@ -2,22 +2,17 @@ name: env workflow example 2
 run-name: env workflow example 2
 on: push
 env:
-  name: Mona
+  name: workflow
   type:  workflow level
 jobs:
   windows_job:
     runs-on: windows-latest
+    env:
+     name: job
+     type: jobs level
     steps:
       - run: echo "Hi ${{ env.name }}"
       - run: echo 'Env type is ${{ env.type }}'
         env:
           name: octocat
           type: steps level
-  linux_job:
-    runs-on: ubuntu-latest
-    env:
-      name: Tux
-      type: job level
-    steps:
-      - run: echo 'Hi ${{ env.name }}' 
-      - run: echo 'Type ${{ env.type }}'

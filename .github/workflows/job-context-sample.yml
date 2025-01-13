@@ -6,11 +6,11 @@ on:
 
 jobs:
   job1:
-   runs-on: ubuntu-latest  
-   env:
-    job_name: job1
+    runs-on: ubuntu-latest  
+    env:
+      job_name: job1
     
-   steps:
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v2
 
@@ -27,22 +27,22 @@ jobs:
           echo "Workflow Name: ${{ github.workflow }}"
           echo "Commit SHA: ${{ github.sha }}"
           echo "Actor: ${{ github.actor }}"
+          
       - name: Print Runner Context
         run: |
           echo "Runner Context:"
           echo "OS: ${{ runner.os }}"
           echo "Architecture: ${{ runner.arch }}"
+          
       - name: Set Output for Next Job
         id: set_output
         run: echo "output_value=Hello from Job 1" >> $GITHUB_ENV
-
-      
 
   job2:
     needs: job1  # Job 2 depends on Job 1 (can use its outputs)
     runs-on: ubuntu-latest
     env:
-     job_name: job2
+      job_name: job2
 
     steps:
       - name: Checkout Code

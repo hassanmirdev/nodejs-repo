@@ -12,6 +12,7 @@ jobs:
      type: jobs level
     steps:
      - name: env workflow
+       run: |
         echo "Hi ${{ env.name }}"
         echo "Env type is ${{ env.type }}"
        env:

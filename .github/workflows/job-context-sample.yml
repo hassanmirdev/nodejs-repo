@@ -33,9 +33,7 @@ jobs:
           echo "OS: ${{ runner.os }}"
           echo "Architecture: ${{ runner.arch }}"
 
-      - name: Set Output for Next Job
-        id: set_output
-        run: echo "output_value=Hello from Job 1" >> $GITHUB_ENV
+      
 
   job2:
     needs: job1  # Job 2 depends on Job 1 (can use its outputs)

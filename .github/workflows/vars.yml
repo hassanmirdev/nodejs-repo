@@ -2,13 +2,14 @@ name: Example vars
 run-name: vars demo
 
 on: [push]
+env:
+      MY_VAR: "Hello from the env context"
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      MY_VAR: "Hello from the env context"
+    
 
     steps:
       - name: Checkout code

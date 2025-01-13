@@ -24,9 +24,10 @@ jobs:
      name: job2
      type: workflow on job 2- job level
     steps:
-    - name: job 2 workflow 
-    - run: echo "Hi ${{ env.name }}"
-    - run: echo "Type ${{ env.type }}"
+    - name: env workflow job 2
+      run: |
+       echo "Hi ${{ env.name }}"
+       echo "Type ${{ env.type }}"
 
 
      

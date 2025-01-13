@@ -11,7 +11,7 @@ jobs:
       - run: echo "Hi ${{ env.name }}"
       - run: echo 'Env type is ${{ env.type }}'
         env:
-          name: Octocat
+          name: octocat
           type: steps level
   linux_job:
     runs-on: ubuntu-latest

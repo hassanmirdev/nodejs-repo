@@ -4,6 +4,9 @@ on: push
 jobs:
   postgres-job:
     runs-on: ubuntu-latest
+    container:
+      image: node:14  # Example: using Node.js container for the job
+      options: --entrypoint /bin/bash
     services:
       postgres:
         image: postgres

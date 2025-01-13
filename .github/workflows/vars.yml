@@ -16,6 +16,8 @@ jobs:
 
       - name: Print a message using env variable
         run: |
-          echo "This is a message: ${{ env.MY_VAR }}"
+          echo "This is from repo ${{ vars.UNAME }}"
+          echo " This is from local worflow ${{ vars.MY_VAR" }}"
+        
 
   

@@ -8,14 +8,16 @@ jobs:
   windows_job:
     runs-on: windows-latest
     steps:
-      - run: echo 'Hi ${{ env.name }}'  # Hi Mona
-      - run: echo 'Hi ${{ env.name }}'  # Hi Octocat
+      - run: echo "Hi ${{ env.name }}"
+      - run: echo 'Env type is ${{ env.type }}'
         env:
           name: Octocat
-          type: steps levell
+          type: steps level
   linux_job:
     runs-on: ubuntu-latest
     env:
       name: Tux
+      type: job level
     steps:
-      - run: echo 'Hi ${{ env.name }}'  # Hi Tux
+      - run: echo 'Hi ${{ env.name }}' 
+      - run: echo 'Type ${{ env.type }}'

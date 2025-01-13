@@ -17,3 +17,7 @@ jobs:
       - run: pg_isready -h localhost -p ${{ job.services.postgres.ports[5432] }}
       - run: echo "Run tests against Postgres"
       - run: echo "Job container ${{ job.container }}"
+      - run: echo "Job container ${{ job.container.id }}"
+      - run: echo "Job container ${{ job.container.network }}"
+     
+      

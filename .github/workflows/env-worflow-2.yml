@@ -19,7 +19,7 @@ jobs:
         name: octocat
         type: steps level
   linux-job:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     env:
      name: job2
      type: workflow on job 2- job level

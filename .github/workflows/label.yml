@@ -14,4 +14,5 @@ jobs:
       - name: Log label creation details
         run: |
           echo "on push label"
+          echo "Label '${{ github.event.label.name }}' 
        

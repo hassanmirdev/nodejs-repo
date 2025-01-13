@@ -2,7 +2,7 @@ name: Example vars demo
 run-name: vars demo
 
 on: 
- push:
+  push:
 
 jobs:
   build:
@@ -10,11 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        # This step checks out the repository to the runner.
 
       - name: Print a message using env variable
         run: |
           echo "This is from repo ${{ vars.myvar }}"
-         
-        
-
-  
+        # This step prints a message using an environment variable.
